@@ -1,0 +1,1 @@
+API routes live under app/api/* - implemented: auth, blogs, categories, comments, subscribers
