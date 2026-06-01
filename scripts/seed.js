@@ -17,7 +17,7 @@ async function seed(){
     { name: 'EV', slug: 'ev' }
   ])
 
-  const admin = new User({ name: 'Admin', email: 'admin@techdrives.test', password: 'password' })
+  const admin = new User({ name: 'Admin', email: 'admin@techdrives.test', password: '4XFtzFnHN4FkbPEu' })
   await admin.save()
 
   await Blog.insertMany([
