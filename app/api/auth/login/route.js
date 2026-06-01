@@ -5,15 +5,50 @@ const jwt = require('jsonwebtoken')
 export async function POST(req) {
   try {
     await connect()
+
     const body = await req.json()
     const { email, password } = body
+
+    console.log("Login email:", email)
+
     const user = await User.findOne({ email })
-    if (!user) return new Response(JSON.stringify({ error: 'Invalid credentials' }), { status: 401 })
+
+    console.log("User found:", !!user)
+
+    if (!user) {
+      return new Response(
+        JSON.stringify({ error: 'User not found' }),
+        { status: 401 }
+      )
+    }
+
     const valid = await user.comparePassword(password)
-    if (!valid) return new Response(JSON.stringify({ error: 'Invalid credentials' }), { status: 401 })
-    const token = jwt.sign({ id: user._id, email: user.email }, process.env.JWT_SECRET || 'dev_secret', { expiresIn: '7d' })
-    return new Response(JSON.stringify({ token }), { status: 200 })
+
+    console.log("Password valid:", valid)
+
+    if (!valid) {
+      return new Response(
+        JSON.stringify({ error: 'Wrong password' }),
+        { status: 401 }
+      )
+    }
+
+    const token = jwt.sign(
+      { id: user._id, email: user.email },
+      process.env.JWT_SECRET || 'dev_secret',
+      { expiresIn: '7d' }
+    )
+
+    return new Response(
+      JSON.stringify({ token }),
+      { status: 200 }
+    )
   } catch (err) {
-    return new Response(JSON.stringify({ error: err.message }), { status: 500 })
+    console.error(err)
+
+    return new Response(
+      JSON.stringify({ error: err.message }),
+      { status: 500 }
+    )
   }
 }

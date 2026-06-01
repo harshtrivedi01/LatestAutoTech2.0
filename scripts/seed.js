@@ -1,3 +1,4 @@
+require('dotenv').config({ path: '.env.local' })
 const mongoose = require('mongoose')
 const connect = require('../lib/mongoose')
 const Category = require('../models/Category')
@@ -17,7 +18,7 @@ async function seed(){
     { name: 'EV', slug: 'ev' }
   ])
 
-  const admin = new User({ name: 'Admin', email: 'admin@techdrives.test', password: '4XFtzFnHN4FkbPEu' })
+  const admin = new User({ name: 'Admin', email: 'admin@techdrives.test', password: 'password' })
   await admin.save()
 
   await Blog.insertMany([

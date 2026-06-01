@@ -41,7 +41,7 @@ export default function Admin(){
         <div className="px-8 py-8 bg-slate-50">
           <form onSubmit={handleSubmit} className="space-y-4">
             <label className="block text-sm font-medium text-slate-700">Email</label>
-            <input name="email" type="email" required className="w-full rounded-3xl border border-slate-200 bg-white px-5 py-3 text-sm text-slate-900 shadow-sm transition focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100" placeholder="hello@latestauto.com" />
+            <input name="email"  required className="w-full rounded-3xl border border-slate-200 bg-white px-5 py-3 text-sm text-slate-900 shadow-sm transition focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100" placeholder="hello@latestauto.com" />
 
             <label className="block text-sm font-medium text-slate-700">Password</label>
             <input name="password" type="password" required className="w-full rounded-3xl border border-slate-200 bg-white px-5 py-3 text-sm text-slate-900 shadow-sm transition focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100" placeholder="Enter your password" />
