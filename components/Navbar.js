@@ -1,12 +1,12 @@
 'use client'
-
+import Image from 'next/image'
+import logo from '../public/uploads/pictures/logo.png'
+import Icon from '../public/uploads/pictures/site icon.png'
 import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Menu, X, Search, Car } from 'lucide-react'
-import Image from 'next/image'
-import logo from '../public/uploads/pictures/logo.png'
-import Icon from '../public/uploads/pictures/site icon.png'
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -38,7 +38,7 @@ export default function Navbar() {
             </div>
 
             <div className="leading-tight">
-              
+
               <Image src={logo} alt="Car Icon"  height={22} />
               <p className="text-xs text-gray-500 font-medium">
                 Cars • Bikes • EV • Tech
