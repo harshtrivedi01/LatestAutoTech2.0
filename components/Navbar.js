@@ -38,6 +38,7 @@ export default function Navbar() {
             </div>
 
             <div className="leading-tight">
+              
               <Image src={logo} alt="Car Icon"  height={22} />
               <p className="text-xs text-gray-500 font-medium">
                 Cars • Bikes • EV • Tech
