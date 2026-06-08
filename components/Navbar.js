@@ -4,6 +4,9 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Menu, X, Search, Car } from 'lucide-react'
+import Image from 'next/image'
+import logo from '../public/uploads/pictures/logo.png'
+import Icon from '../public/uploads/pictures/site icon.png'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -30,14 +33,12 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-[72px]">
           {/* LOGO */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-2xl bg-black text-white flex items-center justify-center shadow-lg group-hover:scale-105 transition duration-300">
-              <Car size={22} />
+            <div className="w-11 h-11 rounded-2xl text-white flex items-center justify-center  group-hover:scale-105 transition duration-300">
+              <Image src={Icon} alt="Car Icon"  size={22} />
             </div>
 
             <div className="leading-tight">
-              <h1 className="text-xl font-extrabold tracking-tight text-black">
-                Latest Auto
-              </h1>
+              <Image src={logo} alt="Car Icon"  height={22} />
               <p className="text-xs text-gray-500 font-medium">
                 Cars • Bikes • EV • Tech
               </p>

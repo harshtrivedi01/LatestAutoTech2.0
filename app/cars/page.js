@@ -4,7 +4,12 @@ import BlogCard from '../../components/BlogCard'
 
 async function getCategoryPosts(categoryName) {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/blogs`, { cache: 'no-store' })
+    const baseUrl =
+      process.env.NODE_ENV === 'development'
+        ? `http://localhost:${process.env.PORT || 3000}`
+        : process.env.NEXT_PUBLIC_API_URL || `http://localhost:${process.env.PORT || 3000}`
+
+    const res = await fetch(`${baseUrl}/api/blogs`, { cache: 'no-store' })
     if (!res.ok) return []
     const posts = await res.json()
     return posts.filter(p => p.category?.name === categoryName)

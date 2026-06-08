@@ -94,7 +94,7 @@ export default function PostForm({ post, onDone }){
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid gap-4 lg:grid-cols-[1fr_320px]">
+      <div className="grid gap-4 ">
         <div className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
@@ -144,9 +144,7 @@ export default function PostForm({ post, onDone }){
               )}
             </div>
           </div>
-        </div>
-
-        <div className="space-y-4">
+          <div className="space-y-4">
           <div>
             <div className="flex items-center justify-between gap-2">
               <div>
@@ -180,6 +178,9 @@ export default function PostForm({ post, onDone }){
             </div>
           </div>
         </div>
+        </div>
+
+        
       </div>
 
       <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">

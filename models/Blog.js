@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+require('./Category')
 
 const BlogSchema = new mongoose.Schema({
   title: { type: String, required: true },
