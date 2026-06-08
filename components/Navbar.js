@@ -34,12 +34,14 @@ export default function Navbar() {
           {/* LOGO */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-11 h-11 rounded-2xl text-white flex items-center justify-center  group-hover:scale-105 transition duration-300">
-              <Image src={Icon} alt="Car Icon"  size={22} />
+              <Car  size={22} />
             </div>
 
             <div className="leading-tight">
 
-              <Image src={logo} alt="Car Icon"  height={22} />
+            <h1 className="text-xl font-extrabold tracking-tight text-black">
+                Latest Auto
+              </h1>
               <p className="text-xs text-gray-500 font-medium">
                 Cars • Bikes • EV • Tech
               </p>
